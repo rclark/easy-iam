@@ -10,7 +10,7 @@
     "docs": "bin/docs.js > permissions.md"
   },
   "bin": {
-    "easy-iam": "bin/easy-iam"
+    "easy-iam": "bin/easy-iam.js"
   },
   "repository": {
     "type": "git",
