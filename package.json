@@ -1,0 +1,33 @@
+{
+  "name": "easy-iam",
+  "version": "1.0.0",
+  "description": "Helps write IAM policies",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "eslint bin lib test index.js",
+    "test": "nyc tape test/*.test.js",
+    "coverage": "nyc --reporter html tape test/*.test.js && opener coverage/index.html"
+  },
+  "bin": {
+    "easy-iam": "bin/easy-iam"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rclark/easy-iam.git"
+  },
+  "author": "Ryan Clark",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rclark/easy-iam/issues"
+  },
+  "homepage": "https://github.com/rclark/easy-iam#readme",
+  "devDependencies": {
+    "eslint": "^2.13.1",
+    "nyc": "^6.6.1",
+    "opener": "^1.4.1",
+    "tape": "^4.6.0"
+  },
+  "dependencies": {
+    "inquirer": "^1.0.3"
+  }
+}
