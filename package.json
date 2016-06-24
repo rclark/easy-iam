@@ -6,7 +6,8 @@
   "scripts": {
     "pretest": "eslint bin lib test index.js",
     "test": "nyc tape test/*.test.js",
-    "coverage": "nyc --reporter html tape test/*.test.js && opener coverage/index.html"
+    "coverage": "nyc --reporter html tape test/*.test.js && opener coverage/index.html",
+    "docs": "bin/docs.js > permissions.md"
   },
   "bin": {
     "easy-iam": "bin/easy-iam"
