@@ -15,75 +15,78 @@ You can also provide objects if you are working in a CloudFormation template:
 iam.dynamodb['read from']({ table: { Ref: 'MyTable' }, region: { Ref: 'AWS::Region' } });
 ```
 
+## Available permissions
+
 ### autoscaling
 - **describe groups**: 
-  - autoscaling:DescribeAutoScalingInstances
-  - autoscaling:DescribeAutoScalingGroups
+  - DescribeAutoScalingInstances
+  - DescribeAutoScalingGroups
 - **update groups**: 
-  - autoscaling:SetDesiredCapacity
-  - autoscaling:UpdateAutoScalingGroup
-  - autoscaling:TerminateInstanceInAutoScalingGroup
+  - SetDesiredCapacity
+  - UpdateAutoScalingGroup
+  - TerminateInstanceInAutoScalingGroup
 
 ### cloudformation
 - **describe stack**: stack, region
-  - cloudformation:DescribeStacks
-  - cloudformation:DescribeStackResources
+  - DescribeStacks
+  - DescribeStackResources
 
 ### cloudwatch
 - **write metrics**: 
-  - cloudwatch:PutMetricData
+  - PutMetricData
 
 ### dynamodb
 - **read from**: table, region
-  - dynamodb:GetItem
-  - dynamodb:Query
-  - dynamodb:Scan
-  - dynamodb:BatchGetItem
+  - GetItem
+  - Query
+  - Scan
+  - BatchGetItem
 - **write to**: table, region
-  - dynamodb:PutItem
-  - dynamodb:DeleteItem
-  - dynamodb:BatchWriteItem
+  - PutItem
+  - UpdateItem
+  - DeleteItem
+  - BatchWriteItem
 - **manage table**: table, region
-  - dynamodb:CreateTable
-  - dynamodb:DeleteTable
-  - dynamodb:DescribeTable
-  - dynamodb:UpdateTable
-  - dynamodb:ListTables
+  - CreateTable
+  - DeleteTable
+  - DescribeTable
+  - UpdateTable
+  - ListTables
 - **read from stream**: table, region
-  - dynamodb:GetRecords
-  - dynamodb:GetShardIterator
-  - dynamodb:DescribeStream
-  - dynamodb:ListStreams
+  - GetRecords
+  - GetShardIterator
+  - DescribeStream
+  - ListStreams
 
 ### s3
 - **list objects**: bucket, prefix
-  - s3:ListBucket
+  - ListBucket
 - **read from**: bucket, prefix
-  - s3:GetObject
-  - s3:GetObjectAcl
-  - s3:GetObjectVersions
+  - GetObject
+  - GetObjectAcl
+  - GetObjectVersions
 - **write to**: bucket, prefix
-  - s3:PutObject
-  - s3:PutObjectAcl
-  - s3:DeleteObject
+  - PutObject
+  - PutObjectAcl
+  - DeleteObject
 - **manage multipart uploads**: bucket
-  - s3:ListBucketMultipartUploads
-  - s3:ListMultipartUploadParts
-  - s3:AbortMultipartUpload
+  - ListBucketMultipartUploads
+  - ListMultipartUploadParts
+  - AbortMultipartUpload
 - **bucket info**: 
-  - s3:ListAllMyBuckets
-  - s3:GetBucketLocation
+  - ListAllMyBuckets
+  - GetBucketLocation
 - **manage lifecycle**: bucket
-  - s3:GetLifecycleConfiguration
-  - s3:PutLifecycleConfiguration
+  - GetLifecycleConfiguration
+  - PutLifecycleConfiguration
 - **manage notifications**: bucket
-  - s3:GetBucketNotification
-  - s3:PutBucketNotification
+  - GetBucketNotification
+  - PutBucketNotification
 - **remove versions**: bucket, prefix
-  - s3:DeleteObjectVersion
+  - DeleteObjectVersion
 
 ### sns
 - **publish to**: topic
-  - sns:Publish
+  - Publish
 - **publish from bucket**: topic, bucket
-  - sns:Publish
+  - Publish

@@ -14,6 +14,7 @@ process.stdout.write('\n```js\n');
 process.stdout.write('iam.dynamodb[\'read from\']({ table: { Ref: \'MyTable\' }, region: { Ref: \'AWS::Region\' } });\n');
 process.stdout.write('```\n');
 
+process.stdout.write('\n## Available permissions\n');
 Object.keys(easy).forEach(function(name) {
   process.stdout.write(`\n### ${name}\n`);
   Object.keys(easy[name]).forEach(function(perm) {
@@ -24,7 +25,7 @@ Object.keys(easy).forEach(function(name) {
     }, []);
     process.stdout.write(`- **${perm}**: ${easy[name][perm].args.join(', ')}\n`);
     actions.forEach(function(action) {
-      process.stdout.write(`  - ${action}\n`);
+      process.stdout.write(`  - ${action.split(':')[1]}\n`);
     });
   });
 });
